@@ -4,33 +4,68 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import generics
 import random
 
 from ipsum.serializers import IpsumSerializer, ParagraphSerializer
 from ipsum.models import IpsumWord, Paragraph
+from ipsum.utils import generate_ipsum
 
-class IpsumViewSet(viewsets.ModelViewSet):
-  queryset = IpsumWord.objects.all()
-  serializer_class = IpsumSerializer
-
-@api_view(['GET', 'POST'])
-def get_ipsum(request):
-  """
-  """
-  if request.method == 'GET':
+class ParagraphList(APIView):
+  def get(self, request, format=None):
     paragraphs = Paragraph.objects.all()
     serializer = ParagraphSerializer(paragraphs, many=True)
     return Response(serializer.data)
 
-  elif request.method == 'POST':
-    paragraph_count = request.POST.get('count', None)
-    paragraph_count = int(paragraph_count)
-    ids = Paragraph.objects.values_list('id', flat=True)
-    rand_ids = random.sample(ids, paragraph_count)
-    random_records = Paragraph.objects.filter(id__in=rand_ids)
 
-    serializer = ParagraphSerializer(data=random_records)
+class ParagraphList(generics.ListAPIView):
+  queryset = Paragraph.objects.all()
+  serializer_class = ParagraphSerializer
 
-    if serializer.is_valid():
-      return Response(serializer.data)
+  def list(self, request):
+    queryset = self.get_queryset()
+    serializer = ParagraphSerializer(queryset, many=True)
+    return Response(serializer.data)
+
+  def get_queryset(self):
+    if self.request.method == 'GET' and 'count' in self.request.GET:
+      num_paragraphs = self.request.GET['count']
+      print('paragraphs: ', num_paragraphs)
+    else:
+      num_paragraphs = 3
+
+    count = 0
+    paragraphs = []
+    while count < num_paragraphs:
+      item = generate_ipsum()
+      paragraphs.append(item)
+      count += 1
+    return paragraphs
+
+
+
+
+
+
+# @api_view(['GET', 'POST'])
+# def get_ipsum(request):
+#   """
+#   """
+#   if request.method == 'GET':
+#     paragraphs = Paragraph.objects.all()
+#     serializer = ParagraphSerializer(paragraphs, many=True)
+#     return Response(serializer.data)
+
+#   elif request.method == 'POST':
+#     paragraph_count = request.POST.get('count', None)
+#     paragraph_count = int(paragraph_count)
+#     ids = Paragraph.objects.values_list('id', flat=True)
+#     rand_ids = random.sample(ids, paragraph_count)
+#     random_records = Paragraph.objects.filter(id__in=rand_ids)
+
+#     serializer = ParagraphSerializer(data=random_records)
+
+#     if serializer.is_valid():
+#       return Response(serializer.data)
 

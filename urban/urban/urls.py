@@ -19,10 +19,11 @@ from rest_framework import routers
 from ipsum import views
 
 router = routers.DefaultRouter()
-router.register(r'ipsum', views.IpsumViewSet)
+# router.register(r'ipsum', views.ParagraphList.as_view())
 #router.register(r'get-ipsum', views.get_ipsum)
 
 urlpatterns = [
+    url(r'^ipsum/$', views.ParagraphList.as_view()),
     url(r'^', include(router.urls)),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

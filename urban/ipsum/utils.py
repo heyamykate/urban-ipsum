@@ -3,6 +3,8 @@ import re
 import itertools
 from ipsum.models import IpsumWord, Paragraph
 
+word_count = 100
+
 def generate_ipsum():
   ids = IpsumWord.objects.values_list('id', flat=True)
   n = word_count
@@ -32,7 +34,8 @@ def parse_sentences(words):
     last = re.sub('([a-z]+)[?:!.,;]*',r'\1',last)
     last = last + '.'
     item.append(last)
-  create_paragraph(new_words)
+  result = create_paragraph(new_words)
+  return result
 
 def create_paragraph(sentences):
   """
@@ -40,6 +43,7 @@ def create_paragraph(sentences):
   """
   merged = list(itertools.chain.from_iterable(sentences))
   paragraph = ' '.join(word for word in merged)
-  print('paragraph: ', paragraph)
+  #print('paragraph: ', paragraph)
   obj = Paragraph(text=paragraph)
   obj.save()
+  return obj
