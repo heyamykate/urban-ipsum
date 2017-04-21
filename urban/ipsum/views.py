@@ -12,13 +12,6 @@ from ipsum.serializers import IpsumSerializer, ParagraphSerializer
 from ipsum.models import IpsumWord, Paragraph
 from ipsum.utils import generate_ipsum
 
-class ParagraphList(APIView):
-  def get(self, request, format=None):
-    paragraphs = Paragraph.objects.all()
-    serializer = ParagraphSerializer(paragraphs, many=True)
-    return Response(serializer.data)
-
-
 class ParagraphList(generics.ListAPIView):
   queryset = Paragraph.objects.all()
   serializer_class = ParagraphSerializer
@@ -42,30 +35,4 @@ class ParagraphList(generics.ListAPIView):
       paragraphs.append(item)
       count += 1
     return paragraphs
-
-
-
-
-
-
-# @api_view(['GET', 'POST'])
-# def get_ipsum(request):
-#   """
-#   """
-#   if request.method == 'GET':
-#     paragraphs = Paragraph.objects.all()
-#     serializer = ParagraphSerializer(paragraphs, many=True)
-#     return Response(serializer.data)
-
-#   elif request.method == 'POST':
-#     paragraph_count = request.POST.get('count', None)
-#     paragraph_count = int(paragraph_count)
-#     ids = Paragraph.objects.values_list('id', flat=True)
-#     rand_ids = random.sample(ids, paragraph_count)
-#     random_records = Paragraph.objects.filter(id__in=rand_ids)
-
-#     serializer = ParagraphSerializer(data=random_records)
-
-#     if serializer.is_valid():
-#       return Response(serializer.data)
 
