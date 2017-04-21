@@ -25,6 +25,7 @@ class ParagraphList(generics.ListAPIView):
     if self.request.method == 'GET' and 'count' in self.request.GET:
       num_paragraphs = self.request.GET['count']
       print('paragraphs: ', num_paragraphs)
+      num_paragraphs = int(num_paragraphs)
     else:
       num_paragraphs = 3
 

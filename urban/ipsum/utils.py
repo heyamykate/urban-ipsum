@@ -3,7 +3,7 @@ import re
 import itertools
 from ipsum.models import IpsumWord, Paragraph
 
-word_count = 100
+word_count = 80
 
 def generate_ipsum():
   ids = IpsumWord.objects.values_list('id', flat=True)
