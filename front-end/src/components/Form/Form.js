@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../../App.css';
 import './Form.scss';
 
+import Container from "../Ipsum/Container";
+
 class Form extends Component {
   render() {
     return (
@@ -18,6 +20,9 @@ class Form extends Component {
                 <input type="submit" value="Get My Sh!t" />
               </div>
             </div>
+          </div>
+          <div className="wrapper">
+            <Container />
           </div>
         </form>
       </div>

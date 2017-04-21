@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from rest_framework import generics
 import random
 
-from ipsum.serializers import IpsumSerializer, ParagraphSerializer
+from ipsum.serializers import ParagraphSerializer
 from ipsum.models import IpsumWord, Paragraph
 from ipsum.utils import generate_ipsum
 

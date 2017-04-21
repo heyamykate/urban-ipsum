@@ -43,7 +43,6 @@ def create_paragraph(sentences):
   """
   merged = list(itertools.chain.from_iterable(sentences))
   paragraph = ' '.join(word for word in merged)
-  #print('paragraph: ', paragraph)
   obj = Paragraph(text=paragraph)
   obj.save()
   return obj
