@@ -1,0 +1,14 @@
+.hero {
+  background: $teal;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: $oswald;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

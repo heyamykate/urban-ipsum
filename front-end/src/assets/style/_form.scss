@@ -1,8 +1,6 @@
-@import "../Style/main.scss";
-
 .form-wrapper {
     width: 100%;
-    max-width: 1100px;
+    max-width: 950px;
     margin: 0 auto;
     .form-sections {
         display: flex;
@@ -51,9 +49,9 @@
             }
             textarea,
             input {
-              &:focus {
-                outline: none;
-              }
+                &:focus {
+                    outline: none;
+                }
             }
             input {
                 text-align: center;

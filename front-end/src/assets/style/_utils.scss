@@ -1,0 +1,71 @@
+// colors //
+$red:           #f0515c;
+$white:         #fafafa;
+$teal:          #23bbbd;
+$tealLight:     #2dc9cb;
+$tealDark:      #1aacae;
+$blue:          #2d89fa;
+$grey:          #696d77;
+$homeGrey:      #e5e9ed;
+$greyBorder:    #d8d9dc;
+$greyblue:      #f5f6f8;
+$lightGrey:     #f4f4f4;
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:700|Slabo+27px');
+
+$oswald: 'Oswald', sans-serif;
+$slabo: 'Slabo 27px', serif;
+
+@mixin device($device) {
+  @if $device == smallMobile {
+    @media (max-width: 369px) {
+      @content;
+    }
+  }
+  @if $device == mobile {
+    @media (max-width: 667px) {
+      @content;
+    }
+  }
+  @if $device == tablet {
+    @media (min-width: 668px) and (max-width: 989px) {
+      @content;
+    }
+  }
+  @if $device == tabletDown {
+    @media (max-width: 990px) {
+      @content;
+    }
+  }
+  @if $device == smallDesktop {
+    @media (min-width: 991px) and (max-width: 1280px) {
+      @content;
+    }
+  }
+  @if $device == mediumDesktop {
+    @media (min-width: 1281px) and (max-width: 1600px) {
+      @content;
+    }
+  }
+  @if $device == ultraWideDesktop {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+  @if $device == allDesktops {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+}
+
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
