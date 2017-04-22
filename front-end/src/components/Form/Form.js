@@ -32,7 +32,7 @@ class Form extends Component {
                 <input type="text" placeholder="# Here" ref={ this.getRef }/>
               </div>
               <div className="form-group">
-                <div onClick={ this.handleSubmit } className="btn">Get my Sh!t</div>
+                <div onClick={ this.handleSubmit } className="btn">Get that Sh!t</div>
               </div>
             </div>
           </div>
