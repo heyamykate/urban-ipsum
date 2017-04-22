@@ -1,0 +1,11 @@
+.ipsum {
+  width: 75%;
+  margin: 0 auto;
+  @include device(mobile) {
+    width: 90%;
+  }
+  p {
+    font-family: $slabo;
+    line-height: 1.6;
+  }
+}

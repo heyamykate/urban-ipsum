@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
 
+import getIpsum from '../../logic';
+
 class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 2, ipsum: '' };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.getRef = this.getRef.bind(this);
+  }
+  getRef(ref){
+    this.setState({ count: ref });
+  }
+  handleSubmit() {
+    let count = this.state.count.value;
+    getIpsum(count).then(function(result) {
+      console.log('result: ', result)
+      this.setState({
+        ipsum: result
+      })
+    })
+  }
   render() {
     return (
       <div className="form-wrapper">
@@ -9,10 +29,10 @@ class Form extends Component {
             <div className="form-section">
               <div className="form-group lateral-group">
                 <label>How many paragraphs do you want?</label>
-                <input type="text" placeholder="2" />
+                <input type="text" placeholder="# Here" ref={ this.getRef }/>
               </div>
               <div className="form-group">
-                <input type="submit" value="Get My Sh!t" />
+                <div onClick={ this.handleSubmit } className="btn">Get my Sh!t</div>
               </div>
             </div>
           </div>

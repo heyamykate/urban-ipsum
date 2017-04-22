@@ -15,6 +15,11 @@ body {
     img {
         width: 50%;
     }
+    span {
+      font-size: 10px;
+      color: $grey;
+      font-family: $slabo;
+    }
     .text {
         text-align: justify;
         font-family: $slabo;
