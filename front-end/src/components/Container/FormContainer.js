@@ -45,4 +45,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch);
 }
 
-export default connect(mapStateToProps)(FormContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);

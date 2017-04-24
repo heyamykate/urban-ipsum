@@ -6,8 +6,6 @@ import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
 import Ipsum from '../../components/Ipsum/Ipsum';
 import sloth from '../../assets/img/spacesloth.jpg';
-import getIpsum from '../../logic';
-import { requestIpsum, receiveIpsum } from '../../redux/actions';
 
 class MainContainer extends Component {
   constructor(props) {
