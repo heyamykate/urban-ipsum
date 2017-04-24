@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-function Ipsum(props) {
-    let ipsum = props.ipsum.map((obj, index) => {
-      return <p key={ index }>{ obj.text }</p>
-    })
-    console.log('ipsum: ', props.ipsum);
-    return (
-      <div className="ipsum">
-        { ipsum }
-      </div>
-      );
+class Ipsum  extends Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      let ipsum = this.props.ipsum.map((obj, index) => {
+        return <p key={ index }>{ obj.text }</p>
+      })
+      return (
+        <div className="ipsum">
+          { ipsum }
+        </div>
+        );
+    }
 
 }
 
-export default Ipsum;
+//export default FormContainer;
+function mapStateToProps(state) {
+  return {
+    ipsum: state.ipsum
+  }
+}
+
+
+export default connect(mapStateToProps)(Ipsum);

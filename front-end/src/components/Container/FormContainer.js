@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { requestIpsum, receiveIpsum } from '../../redux/actions';
+import { bindActionCreators } from 'redux';
+import * as actionCreators from '../../redux/actions';
 import getIpsum from '../../logic';
 
 import Form from '../../components/Form/Form';
 
 class FormContainer extends Component {
     constructor(props) {
-        super(props);
+      super(props);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.getRef = this.getRef.bind(this);
     }
@@ -16,13 +17,13 @@ class FormContainer extends Component {
     }
     handleSubmit() {
         let count = this.state.count.value;
-        this.props.dispatch(requestIpsum(count))
+        this.props.dispatch(actionCreators.requestIpsum(count))
         getIpsum(count).then((result) => {
-          this.props.dispatch(receiveIpsum(count, result));
-            this.setState({
-                ipsum: result,
-                count: 0
-            })
+          this.props.dispatch(actionCreators.receiveIpsum(count, result));
+            // this.setState({
+            //     ipsum: result,
+            //     count: 0
+            // })
         })
     }
     render () {
@@ -42,6 +43,10 @@ function mapStateToProps(state) {
     count: state.count,
     ipsum: state.ipsum
   }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
 }
 
 export default connect(mapStateToProps)(FormContainer);
