@@ -15,14 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from rest_framework import routers
 from ipsum import views
 
-router = routers.DefaultRouter()
-# router.register(r'ipsum', views.ParagraphList.as_view())
-#router.register(r'get-ipsum', views.get_ipsum)
-
 urlpatterns = [
+    url(r'^daily/$', views.DailyWordView.as_view()),
     url(r'^ipsum/$', views.ParagraphList.as_view()),
     url(r'^', include(router.urls)),
     url(r'^admin/', admin.site.urls),

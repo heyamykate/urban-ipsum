@@ -1,11 +1,35 @@
 import React, { Component } from 'react';
-import Form from './components/Form/Form';
+
+import FormContainer from './components/Container/FormContainer';
 import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 import Ipsum from './components/Ipsum/Ipsum';
 import sloth from './assets/img/spacesloth.jpg';
+import getIpsum from './logic';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      ipsum: []
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.getRef = this.getRef.bind(this);
+    this.setState = this.setState.bind(this);
+  }
+  getRef(ref){
+    this.setState({ count: ref });
+  }
+  handleSubmit() {
+    let count = this.state.count.value;
+    getIpsum(count).then( (result) => {
+      this.setState({
+        ipsum: result,
+        count: 0
+      })
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -20,11 +44,13 @@ class App extends Component {
             </div>
             <img src={ sloth } alt="Space Sloth" />
           </div>
-          <Form count="2" />
+          <FormContainer
+            handleSubmit={ this.handleSubmit }
+            getRef={ this.getRef }
+           />
         </Container>
         <Container>
-          <Ipsum />
-          <Ipsum />
+          <Ipsum ipsum={ this.state.ipsum } />
         </Container>
       </div>
     );

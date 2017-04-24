@@ -8,8 +8,8 @@ from rest_framework.views import APIView
 from rest_framework import generics
 import random
 
-from ipsum.serializers import ParagraphSerializer
-from ipsum.models import IpsumWord, Paragraph
+from ipsum.serializers import ParagraphSerializer, DailyWordSerializer
+from ipsum.models import IpsumWord, Paragraph, DailyWord
 from ipsum.utils import generate_ipsum
 
 class ParagraphList(generics.ListAPIView):
@@ -36,4 +36,13 @@ class ParagraphList(generics.ListAPIView):
       paragraphs.append(item)
       count += 1
     return paragraphs
+
+class DailyWordView(generics.ListAPIView):
+  queryset = DailyWord.objects.all()
+  serializer_class = DailyWordSerializer
+
+  def list(self, request):
+    queryset = self.get_queryset()
+    serializer = DailyWordSerializer(queryset, many=True)
+    return Response(serializer.data)
 

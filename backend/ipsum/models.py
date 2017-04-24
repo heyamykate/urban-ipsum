@@ -19,3 +19,14 @@ class IpsumWord(models.Model):
 
 class Paragraph(models.Model):
   text = models.TextField()
+
+class DailyWord(models.Model):
+  word = models.CharField(max_length=300)
+  meaning = models.TextField()
+  date_saved = models.DateField(auto_now=False,
+                                auto_now_add=False)
+
+  def __unicode__(self):
+    return "Daily Word - {0}".format(self.word)
+  class Meta:
+    ordering = ('date_saved', )

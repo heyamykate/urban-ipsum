@@ -10,6 +10,7 @@ from ipsum.models import IpsumWord
 
 WORDS_ENDPOINT = "http://www.urbandictionary.com/popular.php?character={0}"
 letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+bad_words = ['Nigger', 'nigger', 'Nigga', 'nigga', 'pussy', 'Pussy', 'cock', 'Cock']
 
 class Command(BaseCommand):
   def handle(self, *args, **options):
@@ -28,7 +29,7 @@ def query_urban(letters):
     print('getting words for letter {0}'.format(letter))
     words = parse_words(letter, None)
     for word in words:
-      if 'nigger' not in word and 'Nigger' not in word and 'nigga' not in word and 'Nigga' not in word:
+      if 'nigger' not in word and 'Nigger' not in word and 'nigga' not in word and 'Nigga' not in word and 'Pussy' not in word and 'pussy' not in word:
         results.append(word)
   save_words(results)
 

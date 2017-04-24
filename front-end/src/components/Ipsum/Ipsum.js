@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Ipsum extends Component {
-  render() {
+function Ipsum(props) {
+    let ipsum = props.ipsum.map((obj, index) => {
+      return <p key={ index }>{ obj.text }</p>
+    })
+    console.log('ipsum: ', props.ipsum);
     return (
       <div className="ipsum">
-        <p>Unkeyboardinated Toilet Mummy an hero Tumblr z0mg zomboni Richard You lie! math Spiderman. dylan evasive mumbling Rush uber Grammar Panther Dick Cheney zofits Freestyle erotica quife. friends with benefits Pink Floyd gotcha journalism the game Ianthe violent agreement Nicholas awkward arm Home Run houdini. Ana XD Writer's crap erection professional student pluto booty flash mob xxx Unix beard Knifey-Spoony. QFT huylo Xanthe good talk Un Brazo Yao Ming vyvanse olly olly oxen free Quexistence Xandir. Kat X-rayted asshat Invader Zim UCSD Spooning Presponse Chase Libertarian Vegan. jesus hitler christ Palin OTL U got no jams Undertaker OML intergrapes Kim Jong Un Tupac post-Potter depression. darth breather heartbroken nookie TV stoned X to the Z united states Evelyn soccer Chinnifer Maniston Vaginal Vampire.</p>
+        { ipsum }
       </div>
       );
-  }
+
 }
 
 export default Ipsum;
