@@ -20,10 +20,6 @@ class FormContainer extends Component {
         this.props.dispatch(actionCreators.requestIpsum(count))
         getIpsum(count).then((result) => {
           this.props.dispatch(actionCreators.receiveIpsum(count, result));
-            // this.setState({
-            //     ipsum: result,
-            //     count: 0
-            // })
         })
     }
     render () {

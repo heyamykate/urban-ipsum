@@ -18,7 +18,6 @@ class Ipsum  extends Component {
 
 }
 
-//export default FormContainer;
 function mapStateToProps(state) {
   return {
     ipsum: state.ipsum

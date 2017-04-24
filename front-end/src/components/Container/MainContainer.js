@@ -16,25 +16,9 @@ class MainContainer extends Component {
       count: 0,
       ipsum: []
     }
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.getRef = this.getRef.bind(this);
     this.setState = this.setState.bind(this);
   }
-  // getRef(ref){
-  //   this.setState({ count: ref });
-  // }
-  // handleSubmit() {
-  //   let count = this.state.count.value;
-  //   this.props.dispatch(requestIpsum(count))
-  //   getIpsum(count).then( (result) => {
-  //     this.setState({
-  //       ipsum: result,
-  //       count: 0
-  //     })
-  //   })
-  // }
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <Header />
