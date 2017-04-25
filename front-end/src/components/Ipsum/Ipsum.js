@@ -10,8 +10,10 @@ class Ipsum  extends Component {
         return <p key={ index }>{ obj.text }</p>
       })
       return (
-        <div className="ipsum">
-          { ipsum }
+        <div>
+          <div className="ipsum">
+            { ipsum }
+          </div>
         </div>
         );
     }

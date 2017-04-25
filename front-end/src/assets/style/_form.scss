@@ -22,24 +22,6 @@
             font-size: 14px;
             margin: 10px 0px 20px 0px;
         }
-        .btn {
-            background: $teal;
-            padding: 9px 38px;
-            display: inline-block;
-            border-radius: 35px;
-            text-align: center;
-            font-family: $oswald;
-            color: $white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: border-radius .3s ease;
-            &:hover {
-                border-radius: 2px;
-            }
-        }
         .form-group {
             display: flex;
             flex-direction: column;

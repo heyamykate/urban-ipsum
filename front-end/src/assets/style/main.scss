@@ -5,6 +5,7 @@
 @import "ipsum";
 body {
     @include font-smoothing(on);
+    margin: 0;
 }
 
 .top {
@@ -14,6 +15,11 @@ body {
     padding: 20px;
     img {
         width: 50%;
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
     }
     span {
       font-size: 10px;
