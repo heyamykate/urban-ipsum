@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../redux/actions';
 import getIpsum from '../../logic';
 
@@ -32,7 +31,6 @@ class FormContainer extends Component {
     }
 }
 
-//export default FormContainer;
 function mapStateToProps(state) {
   return {
     isFetching: state.isFetching,
@@ -40,9 +38,5 @@ function mapStateToProps(state) {
     ipsum: state.ipsum
   }
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators(actionCreators, dispatch);
-// }
 
 export default connect(mapStateToProps)(FormContainer);

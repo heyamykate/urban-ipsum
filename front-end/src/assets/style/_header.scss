@@ -1,14 +1,23 @@
 .hero {
-  background: $teal;
+  background: $dark;
   width: 100%;
-  height: 30vh;
+  height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 2;
   h1 {
     font-family: $oswald;
-    color: $white;
+    color: $gold;
     text-transform: uppercase;
     text-align: center;
+  }
+  p {
+    font-family: $roboto;
+    text-transform: uppercase;
+    text-align: center;
+    color: $cream;
   }
 }

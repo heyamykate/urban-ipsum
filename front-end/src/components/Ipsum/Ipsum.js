@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import Container from '../../components/Container/Container';
 
-class Ipsum  extends Component {
-    constructor(props) {
-      super(props);
-    }
-    render() {
-      let ipsum = this.props.ipsum.map((obj, index) => {
-        return <p key={ index }>{ obj.text }</p>
-      })
-      return (
-        <div>
-          <div className="ipsum">
-            { ipsum }
-          </div>
+function Ipsum (props) {
+    console.log("ipsum props: ", props);
+    let ipsum = props.ipsum.map((obj, index) => {
+      return <p key={ index }>{ obj.text }</p>
+    })
+    return (
+      <Container>
+        <div className="ipsum">
+          { ipsum }
         </div>
-        );
-    }
-
+      </Container>
+    );
 }
 
 function mapStateToProps(state) {

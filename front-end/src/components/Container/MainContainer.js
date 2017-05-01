@@ -2,40 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import FormContainer from '../../components/Container/FormContainer';
-import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
-import Ipsum from '../../components/Ipsum/Ipsum';
-import sloth from '../../assets/img/spacesloth.jpg';
 
 class MainContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      ipsum: []
-    }
-    this.setState = this.setState.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Container>
+        <Container containerClass="fixed-offset">
           <div className="top">
-            <div className="text">
-              <p>I know, I know. Another ipsum generator. But hear me out, this one is special.</p>
-              <p>Instead of barfing out useless words, this generator pulls its content from <a href="https://www.urbandictionary.com/" target="_blank">Urban Dictionary</a>. That means that not only will you laugh your ass off, but you'll also learn the phrases all the youths are using these days.</p>
-              <p>Educate yourself.</p>
-              <span>It might be NSFW. Depends on the workplace.</span>
-            </div>
-            <img src={ sloth } alt="Space Sloth" />
+            <p>Spice up your work and broaden your vocabulary by using Urban Ipsum - the ipsum generator that pulls its content from <a href="https://www.urbandictionary.com/" target="_blank">Urban Dictionary</a>.</p>
           </div>
           <FormContainer />
         </Container>
-        <Container>
-          <Ipsum ipsum={ this.state.ipsum } />
-        </Container>
-      </div>
     );
   }
 }

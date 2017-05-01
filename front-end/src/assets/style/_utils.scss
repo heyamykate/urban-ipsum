@@ -1,4 +1,7 @@
 // colors //
+$dark: #1d1d1d;
+$cream: #dad6cc;
+$gold: #8f7c4f;
 $red: #f0515c;
 $white: #fafafa;
 $teal: #23bbbd;
@@ -10,11 +13,10 @@ $homeGrey: #e5e9ed;
 $greyBorder: #d8d9dc;
 $greyblue: #f5f6f8;
 $lightGrey: #f4f4f4;
-@import url('https://fonts.googleapis.com/css?family=Oswald:700|Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed');
 $oswald: 'Oswald',
 sans-serif;
-$slabo: 'Slabo 27px',
-serif;
+$roboto: 'Roboto Condensed', sans-serif;
 @mixin device($device) {
     @if $device==smallMobile {
         @media (max-width: 369px) {
@@ -70,13 +72,14 @@ serif;
 }
 
 .btn {
-    background: $teal;
+    background: transparent;
+    border: 2px solid $gold;
     padding: 9px 38px;
     display: inline-block;
     border-radius: 35px;
     text-align: center;
     font-family: $oswald;
-    color: $white;
+    color: $gold;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 13px;

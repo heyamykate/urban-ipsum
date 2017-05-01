@@ -1,13 +1,19 @@
 import MainContainer from '../components/Container/MainContainer';
 import React from 'react';
-import { HashRouter, Route  } from 'react-router-dom'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Provider } from 'react-redux';
+import Wrapper from '../components/Layout/Wrapper';
+import Ipsum from '../components/Ipsum/Ipsum';
 
-const routes = (
-  <HashRouter>
-    <div>
-      <Route path='/' component={MainContainer} />
-    </div>
-  </HashRouter>
+const Root = ({ store }) => (
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={Wrapper}>
+        <IndexRoute component={MainContainer} />
+        <Route path="/ipsum" component={Ipsum} />
+      </Route>
+    </Router>
+  </Provider>
 );
 
-export default routes;
+export default Root;
