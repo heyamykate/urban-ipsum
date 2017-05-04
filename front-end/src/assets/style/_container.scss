@@ -1,3 +1,6 @@
+.form-container {
+  opacity: 0;
+}
 .container {
   position: relative;
   padding: 10px 0px 50px 0px;
@@ -16,6 +19,8 @@
     width: 90%;
     max-width: 990px;
     margin: 0 auto;
+    opacity: 0;
+    transform: translateY(15px);
     img {
         width: 50%;
     }

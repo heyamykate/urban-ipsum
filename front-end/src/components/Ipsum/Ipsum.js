@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Container from '../../components/Container/Container';
 import { getIpsum } from '../../logic';
+import { Link } from 'react-router-dom';
+import { TweenMax } from 'gsap';
 
 class Ipsum extends Component {
   constructor(props) {
@@ -12,7 +14,11 @@ class Ipsum extends Component {
   componentDidMount() {
     let num = parseInt(this.props.match.params.num, 10);
     getIpsum(num).then((result) => {
-      this.setState({ ipsum: result })
+      this.setState({ ipsum: result });
+      TweenMax.to('.ipsum .btn', 0.4, { opacity: 1 })
+      setTimeout(() => {
+        TweenMax.to('.ipsum p', 0.4, { y: 0, opacity: 1 });
+      }, 600)
     });
   }
   render() {
@@ -25,10 +31,9 @@ class Ipsum extends Component {
     return (
       <Container containerClass="fixed-offset">
         <div className="ipsum">
-          <a className="btn">
+          <Link to="/" className="btn">
             <i className="fa fa-arrow-left" aria-hidden="true"></i>
-            Get Freshies</a>
-          
+            Get Freshies</Link>
           { ipsum }
         </div>
       </Container>

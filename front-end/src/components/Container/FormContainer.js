@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { getIpsum } from '../../logic';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import Form from '../../components/Form/Form';
+import history from '../../history';
+import PropTypes from 'prop-types';
 
 class FormContainer extends Component {
-    constructor(props) {
+    constructor(props, context) {
       super(props);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.getRef = this.getRef.bind(this);
@@ -14,9 +16,8 @@ class FormContainer extends Component {
     }
     handleSubmit() {
         let count = this.state.count.value;
-        getIpsum(count).then((result) => {
-          console.log('ipsum: ', result)
-        })
+        let path = `ipsum/${count}`;
+        this.context.router.history.push(path);
     }
     render () {
       return (
@@ -27,6 +28,9 @@ class FormContainer extends Component {
           </div>
       )
     }
+}
+FormContainer.contextTypes = {
+  router: PropTypes.object.isRequired
 }
 
 export default FormContainer;

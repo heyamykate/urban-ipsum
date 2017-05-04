@@ -3,10 +3,16 @@
   margin: 0 auto;
   font-family: $roboto;
   line-height: 1.6;
+
   @include device(mobile) {
     width: 90%;
   }
+  p {
+    opacity: 0;
+    transform: translateY(15px);
+  }
   .btn {
     margin-bottom: 14px;
+    opacity: 0;
   }
 }
