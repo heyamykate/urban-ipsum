@@ -6,4 +6,7 @@
   @include device(mobile) {
     width: 90%;
   }
+  .btn {
+    margin-bottom: 14px;
+  }
 }

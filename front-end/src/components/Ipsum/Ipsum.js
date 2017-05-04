@@ -25,6 +25,10 @@ class Ipsum extends Component {
     return (
       <Container containerClass="fixed-offset">
         <div className="ipsum">
+          <a className="btn">
+            <i className="fa fa-arrow-left" aria-hidden="true"></i>
+            Get Freshies</a>
+          
           { ipsum }
         </div>
       </Container>

@@ -1,9 +1,12 @@
 .container {
   position: relative;
-  padding: 30px 0px 50px 0px;
+  padding: 10px 0px 50px 0px;
   z-index: 4;
   width: 100%;
   background: $cream;
+  @include device(mobile) {
+    padding-top: 0px;
+  }
 }
 .top {
     display: flex;
