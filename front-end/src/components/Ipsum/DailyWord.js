@@ -4,6 +4,14 @@ import { getDailyWord } from '../../logic';
 class DailyWord extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      dailyWord: ''
+    }
+  }
+  componentDidMount() {
+    getDailyWord().then((result) => {
+      console.log('dailyword: ', result);
+    });
   }
   render() {
     return (

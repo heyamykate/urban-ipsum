@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import FormContainer from '../../components/Container/FormContainer';
 import Container from '../../components/Container/Container';
-import DailyWord from '../../components/Ipsum/DailyWord';
+//import DailyWord from '../../components/Ipsum/DailyWord';
 
 class MainContainer extends Component {
   render() {
@@ -13,7 +13,6 @@ class MainContainer extends Component {
             <span>Somewhat NSFW. You have been warned.</span>
           </div>
           <FormContainer />
-          <DailyWord />
         </Container>
     );
   }
