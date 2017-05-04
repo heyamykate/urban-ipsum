@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actionCreators from '../../redux/actions';
-import getIpsum from '../../logic';
+import { getIpsum } from '../../logic';
 
 import Form from '../../components/Form/Form';
 
@@ -16,27 +14,19 @@ class FormContainer extends Component {
     }
     handleSubmit() {
         let count = this.state.count.value;
-        this.props.dispatch(actionCreators.requestIpsum(count))
         getIpsum(count).then((result) => {
-          this.props.dispatch(actionCreators.receiveIpsum(count, result));
+          console.log('ipsum: ', result)
         })
     }
     render () {
       return (
         <div className="form-container">
-          <Form handleSubmit={ this.handleSubmit }
-          getRef={ this.getRef } />
+          <Form
+            handleSubmit={ this.handleSubmit }
+            getRef={ this.getRef } />
           </div>
       )
     }
 }
 
-function mapStateToProps(state) {
-  return {
-    isFetching: state.isFetching,
-    count: state.count,
-    ipsum: state.ipsum
-  }
-}
-
-export default connect(mapStateToProps)(FormContainer);
+export default FormContainer;

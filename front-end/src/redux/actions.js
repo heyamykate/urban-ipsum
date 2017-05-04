@@ -16,3 +16,21 @@ export function receiveIpsum(count, json) {
         items: json
     }
 }
+
+export const REQUEST_WORD = 'REQUEST_WORD';
+export function requestWord() {
+  return {
+    type: REQUEST_WORD
+  }
+}
+
+export const RECEIVE_WORD = 'RECEIVE_WORD';
+export function receiveWord(json) {
+  return {
+    type: RECEIVE_WORD,
+    dailyWord: {
+      word: json.word,
+      definition: json.definition
+    }
+  }
+}

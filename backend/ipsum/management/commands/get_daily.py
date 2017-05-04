@@ -22,7 +22,7 @@ def get_daily_word(soup=None):
   header = soup.find(class_="def-panel").find(class_="def-header").find('a')
   meaning = soup.find(class_="def-panel").find(class_="meaning")
   word, created = DailyWord.objects.update_or_create(word=header.text,
-                                            meaning=meaning.text,
+                                            definition=meaning.text.strip(),
                                             date_saved=datetime.date.today())
   word.save()
   print('daily word: ', word)

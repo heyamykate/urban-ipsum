@@ -1,6 +1,5 @@
 import React from 'react';
 
-// functional stateless component
 function Form (props) {
   return (
       <div className="form-wrapper">

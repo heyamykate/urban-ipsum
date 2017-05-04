@@ -1,11 +1,9 @@
 .ipsum {
   width: 75%;
   margin: 0 auto;
+  font-family: $roboto;
+  line-height: 1.6;
   @include device(mobile) {
     width: 90%;
-  }
-  p {
-    font-family: $roboto;
-    line-height: 1.6;
   }
 }

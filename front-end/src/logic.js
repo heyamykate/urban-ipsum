@@ -1,14 +1,24 @@
 import axios from 'axios';
 
-function getIpsum(count) {
-    return axios.get(`http://127.0.0.1:8000/ipsum?count=${count}`)
-        .then(function(response) {
-            console.log(response.data);
+const apiUrl = 'http://127.0.0.1:8000';
+
+export function getIpsum(count) {
+    return axios.get(`${apiUrl}/ipsum?count=${count}`)
+        .then((response) => {
             return response.data;
         })
-        .catch(function(err) {
+        .catch((err) => {
             console.log('error: ', err)
         })
 }
 
-export default getIpsum;
+export function getDailyWord() {
+  return axios.get(`${apiUrl}/daily/`)
+    .then((response) => {
+      let dailyWord = response.data[0];
+      return dailyWord;
+    })
+    .catch((err) => {
+      console.log('error: ', err);
+    })
+}

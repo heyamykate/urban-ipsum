@@ -10,4 +10,4 @@ class ParagraphSerializer(serializers.ModelSerializer):
 class DailyWordSerializer(serializers.ModelSerializer):
   class Meta:
     model = DailyWord
-    fields = ('date_saved', 'word', 'meaning', )
+    fields = ('date_saved', 'word', 'definition', )
