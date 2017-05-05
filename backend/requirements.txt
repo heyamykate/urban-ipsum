@@ -1,0 +1,15 @@
+appdirs==1.4.3
+beautifulsoup4==4.5.3
+Django==1.11
+django-extensions==1.7.8
+djangorestframework==3.6.2
+packaging==16.8
+psycopg2==2.7.1
+pyparsing==2.2.0
+pytz==2017.2
+requests==2.13.0
+six==1.10.0
+stevedore==1.1.0
+virtualenv==15.0.1
+virtualenv-clone==0.2.5
+virtualenvwrapper==4.3.1
