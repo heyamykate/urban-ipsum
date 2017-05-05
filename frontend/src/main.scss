@@ -1,8 +1,8 @@
-@import "utils";
-@import "container";
-@import "form";
-@import "header";
-@import "ipsum";
+@import "partials/utils";
+@import "partials/container";
+@import "partials/form";
+@import "partials/header";
+@import "partials/ipsum";
 #root,
 html {
   height: 100%;

@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed");
+.btn {
+  background: transparent;
+  border: 2px solid #8f7c4f;
+  padding: 9px 38px;
+  display: inline-block;
+  border-radius: 35px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  color: #8f7c4f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all .3s ease;
+  text-decoration: none; }
+  .btn:hover {
+    border-radius: 2px;
+    background: #8f7c4f;
+    color: #fafafa; }
+  .btn .fa-arrow-left {
+    margin-right: 11px; }
+
+.form-container {
+  opacity: 0; }
+
+.container {
+  position: relative;
+  padding: 10px 0px 50px 0px;
+  z-index: 4;
+  width: 100%;
+  background: #dad6cc; }
+  @media (max-width: 667px) {
+    .container {
+      padding-top: 0px; } }
+
+.top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 90%;
+  max-width: 990px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(15px); }
+  .top img {
+    width: 50%; }
+  .top a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold; }
+  .top span {
+    font-size: 10px;
+    color: #696d77;
+    font-family: "Roboto Condensed", sans-serif; }
+  .top .text,
+  .top p {
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    line-height: 1.5;
+    width: 45%; }
+  @media (max-width: 667px) {
+    .top {
+      flex-direction: column; }
+      .top .text,
+      .top p,
+      .top img {
+        width: 90%;
+        margin: 15px auto; } }
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px; }
+
+.footer {
+  height: 50px;
+  background: #1d1d1d;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer p,
+  .footer a {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #dad6cc;
+    margin: 0 auto;
+    font-size: 12px;
+    text-transform: uppercase; }
+
+.form-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 30px; }
+  .form-wrapper .form-sections {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-items: center; }
+  .form-wrapper .form-section {
+    margin: 10px;
+    width: 46%; }
+    @media (max-width: 667px) {
+      .form-wrapper .form-section {
+        width: 90%; } }
+    .form-wrapper .form-section h5 {
+      text-transform: uppercase;
+      color: #2d89fa;
+      letter-spacing: 0.8px;
+      font-size: 14px;
+      margin: 10px 0px 20px 0px; }
+    .form-wrapper .form-section .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0px; }
+      .form-wrapper .form-section .form-group label {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        font-family: "Roboto Condensed", sans-serif; }
+      .form-wrapper .form-section .form-group input {
+        text-align: center;
+        border: 2px solid #8f7c4f;
+        padding: 15px 8px;
+        font-size: 13px;
+        letter-spacing: 0.8px;
+        background: transparent;
+        color: #8f7c4f;
+        margin-top: 30px;
+        width: 60px; }
+        .form-wrapper .form-section .form-group input:focus {
+          outline: none; }
+
+.hero {
+  background: #1d1d1d;
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2; }
+  .hero h1 {
+    font-family: "Oswald", sans-serif;
+    color: #8f7c4f;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px); }
+  .hero p {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: #dad6cc;
+    opacity: 0;
+    transform: scale(0); }
+
+.ipsum {
+  width: 75%;
+  margin: 0 auto;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.6; }
+  @media (max-width: 667px) {
+    .ipsum {
+      width: 90%; } }
+  .ipsum p {
+    opacity: 0;
+    transform: translateY(15px); }
+  .ipsum .btn {
+    margin-bottom: 14px;
+    opacity: 0; }
+
+#root,
+html {
+  height: 100%; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: #dad6cc; }
+
+.fa-heart {
+  color: #8f7c4f; }
+
+.fa-bolt {
+  top: -5%;
+  left: 2%;
+  font-size: 64%;
+  color: #1d1d1d; }

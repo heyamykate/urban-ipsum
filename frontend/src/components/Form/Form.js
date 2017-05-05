@@ -11,7 +11,7 @@ function Form (props) {
                 <input type="text" placeholder="# Here" ref={ props.getRef }/>
               </div>
               <div className="form-group">
-                <div onClick={ props.handleSubmit } className="btn">Get that Sh!t</div>
+                <div onClick={ props.handleSubmit } className="btn">Get It</div>
               </div>
             </div>
           </div>

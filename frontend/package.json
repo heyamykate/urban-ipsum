@@ -5,9 +5,11 @@
   "dependencies": {
     "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
+    "express": "^4.15.2",
     "gsap": "^1.19.1",
     "history": "^4.6.1",
     "isomorphic-fetch": "^2.2.1",
+    "morgan": "^1.8.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -59,8 +61,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "build": "npm run build-css && node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive"
   },
   "jest": {
     "collectCoverageFrom": [
