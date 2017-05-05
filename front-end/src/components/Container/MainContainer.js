@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TimelineMax } from 'gsap';
-
 import FormContainer from '../../components/Container/FormContainer';
 import Container from '../../components/Container/Container';
 
