@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { RouteTransition } from 'react-router-transition';
 import history from './history';
 
 import Wrapper from './components/Layout/Wrapper';

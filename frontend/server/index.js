@@ -2,12 +2,17 @@
 
 const app = require('./app');
 
-const IP = require('../private');
-console.log("IP: ", IP);
+if (process.env.NODE_ENV == 'production') {
+  const IP = require('../private');
+  const PORT = process.env.PORT || 9000;
 
-const PORT = process.env.PORT || 9000;
-const IP = '107.170.246.10'
+  app.listen(PORT, IP, () => {
+    console.log(`Server running at http://${IP}:${PORT}`);
+  });
 
-app.listen(PORT, IP, () => {
-  console.log(`Server running at http://${IP}:${PORT}`);
-});
+} else {
+  const PORT = process.env.PORT || 9000;
+  app.listen(PORT, () => {
+    console.log(`App listening at http://localhost:${PORT}`);
+  })
+}

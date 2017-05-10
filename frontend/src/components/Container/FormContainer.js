@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { getIpsum } from '../../logic';
-import { BrowserRouter as Router } from 'react-router-dom';
 import Form from '../../components/Form/Form';
-import history from '../../history';
 import PropTypes from 'prop-types';
 
 class FormContainer extends Component {

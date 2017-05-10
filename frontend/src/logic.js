@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'http://api.urbanipsum.com/';
+const apiUrl = 'http://api.urbanipsum.com'
 
 export function getIpsum(count) {
     return axios.get(`${apiUrl}/ipsum?count=${count}`)
