@@ -30,6 +30,9 @@ def parse_sentences(words):
   """
   new_words = list(split_seq(words, 10))
   for item in new_words:
+    first_word = item[0]
+    first_word = first_word[:1].upper() + first_word[1:]
+    item[0] = first_word
     last = item.pop(len(item)-1)
     last = re.sub('([a-z]+)[?:!.,;]*',r'\1',last)
     last = last + '.'

@@ -44,6 +44,9 @@
                 width: 60px;
                 &:focus {
                     outline: none;
+                    -webkit-appearance: none;
+                    margin: 0;
+                    -moz-appearance: textfield;
                 }
             }
         }
