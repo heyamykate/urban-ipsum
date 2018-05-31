@@ -25,8 +25,7 @@ SECRET_KEY = 'lb57almo_9#ok8l#^@gahu@oihjwj^#+--gb2=&_18_4^jn47@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['urbanipsum.com', 'api.urbanipsum.com']
-
+ALLOWED_HOSTS = ['urbanipsum.com', 'www.urbanipsum.com', 'api.urbanipsum.com']
 
 # Application definition
 
