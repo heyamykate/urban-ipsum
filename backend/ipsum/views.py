@@ -32,7 +32,3 @@ class DailyWordView(viewsets.ModelViewSet):
   queryset = DailyWord.objects.all()
   serializer_class = DailyWordSerializer
 
-  # def get(self, request, format=None):
-  #   words = DailyWord.objects.all()
-  #   serializer = DailyWordSerializer(words, many=True)
-  #   return Response(serializer.data)

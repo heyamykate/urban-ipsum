@@ -25,7 +25,7 @@ SECRET_KEY = 'lb57almo_9#ok8l#^@gahu@oihjwj^#+--gb2=&_18_4^jn47@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['urbanipsum.com', 'api.urbanipsum.com']
 
 
 # Application definition
@@ -46,7 +46,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
